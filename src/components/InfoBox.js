@@ -1,8 +1,8 @@
 import React from 'react'
 import {Card, CardContent} from '@material-ui/core';
-import { createMuiTheme } from '@material-ui/core/styles';
+import "../InfoBox.css";
 import Typography from '@material-ui/core/Typography';
-import cyan from '@material-ui/core/colors/cyan';
+
 
 // const theme = createMuiTheme({
 //     palette: {
@@ -15,9 +15,13 @@ import cyan from '@material-ui/core/colors/cyan';
 //     },
 //   });
 
-const InfoBox = ({title, cases, total}) => {
+const InfoBox = ({title, cases, isRed, isBlue, total, active , ...props}) => {
     return (
-        <Card className="infoBox">
+        <Card className={`infoBox ${(active && isRed) &&'infoBox--red'}
+        ${(active && isBlue) &&'infoBox--blue'}
+         ${(active) && 'infoBox--selected'} 
+         `}         
+          onClick={props.onClick}>
         {/* Coronovirus cases */}
             <CardContent>
                 <Typography className="infoBox__title" color="textSecondary">
@@ -25,7 +29,7 @@ const InfoBox = ({title, cases, total}) => {
                 </Typography>
         
         {/* Number of cases */}
-                <h2 className="infoBox_cases">{cases}</h2>
+                <h2 className={`infoBox_cases ${!isRed && !isBlue && "infoBox__cases__green"}`}>{cases}</h2>
 
         {/* Total Cases */}
                 <Typography className="infoBox__total" color="textSecondary">
