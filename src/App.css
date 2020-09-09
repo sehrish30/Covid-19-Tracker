@@ -87,3 +87,9 @@ body{
     flex-direction: column;
   }
 }
+
+@media (max-width: 500px){
+.app__stats{
+  flex-direction: column;
+}
+}

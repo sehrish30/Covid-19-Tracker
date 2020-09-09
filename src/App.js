@@ -114,7 +114,7 @@ function App() {
         <InfoBox
         active={casesType === 'deaths'}
          onClick = {e => setCasesType('deaths')}
-         title="Total"
+         title="Deaths"
          isRed
           total={prettyPrintStat(countryInfo.deaths)} 
           cases={prettyPrintStat(countryInfo.todayDeaths)}

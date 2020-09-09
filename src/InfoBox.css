@@ -7,6 +7,19 @@
     margin-right: 15px;
 }
 
+@media(max-width: 550px){
+    .infoBox:nth-child(1){
+        margin-right: 0;
+        border-bottom: 1px solid #fff
+    } 
+    .infoBox:nth-child(2){
+        margin-right: 0;
+        border-bottom: 1px solid #fff
+    } 
+}
+
+
+
 .infoBox_cases{
     color: #212121;
     font-weight: 600;
